@@ -10,7 +10,7 @@ public class PauseScript : MonoBehaviour
 
     void Awake()
     {
-        pauseCanvas = GameObject.Find("PauseCanvas");
+        pauseCanvas = GameObject.Find("PausePanel");
         pauseCanvas.SetActive(false);
     }
 
