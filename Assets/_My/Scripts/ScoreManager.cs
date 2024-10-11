@@ -12,10 +12,12 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] List<TextMeshProUGUI> scoreTextList;
     [SerializeField] TextMeshProUGUI scoreTextExtra;
     int selectedHighscore;
+    GameObject scoreObject;
 
     void Awake()
     {
         scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
+        scoreObject = GameObject.Find("ScorePanel");
     }
 
     void Start()
