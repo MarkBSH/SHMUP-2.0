@@ -840,7 +840,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b5701cc2f985240adae3a160241f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: []
+  waves:
+  - {fileID: 11400000, guid: 4fa62390868e78a47b9a57b011e8f9d5, type: 2}
+  - {fileID: 11400000, guid: 3b44e2f396b93d24ca3b724711121a25, type: 2}
+  - {fileID: 11400000, guid: 000c906dfcb570a4682fd225575288b6, type: 2}
+  - {fileID: 11400000, guid: e9ccfd37a677aac4da4fc3842be9cd88, type: 2}
+  currentWave: 0
   spawnInterval: 10
 --- !u!1 &447477729
 GameObject:
@@ -1077,7 +1082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &695217077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1447,6 +1452,10 @@ PrefabInstance:
     - target: {fileID: 6920502002576461400, guid: 139606b005a5b424cadfb2a0843a8b17, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677070867301557335, guid: 139606b005a5b424cadfb2a0843a8b17, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2488,7 +2497,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
