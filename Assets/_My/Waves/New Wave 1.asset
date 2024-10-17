@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5344b365dc1e164a903bce97242092c, type: 3}
+  m_Name: New Wave 1
+  m_EditorClassIdentifier: 
+  enemyGroups:
+  - {fileID: 11400000, guid: 9c1c9ffc904737d4e82680d3f62c59ed, type: 2}
+  - {fileID: 11400000, guid: a6441c7af2a46db46b7e74d9c2f88eec, type: 2}
+  - {fileID: 11400000, guid: ff01af7c5ae9c6c42895e02bfc915836, type: 2}
