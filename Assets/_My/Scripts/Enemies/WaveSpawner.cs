@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] List<Wave> waves = new();
-    int currentWave = 0;
+    public int currentWave = 0;
     [SerializeField] float spawnInterval = 10;
     List<GameObject> spawnedEnemies = new();
     bool spawningWaves = false;
@@ -32,7 +32,7 @@ public class WaveSpawner : MonoBehaviour
         {
             for (int j = 0; j < waves[currentWave].enemyGroups[i].Enemies.Count; j++)
             {
-                spawnedEnemies.Add(Instantiate(waves[currentWave].enemyGroups[i].Enemies[j], new Vector3(Random.Range(-7, 7), 6, 0), Quaternion.Euler(0, 180, 0)));
+                spawnedEnemies.Add(Instantiate(waves[currentWave].enemyGroups[i].Enemies[j], new Vector3(0, 6, 0), Quaternion.Euler(0, 180, 0)));
             }
 
             yield return new WaitForSeconds(spawnInterval);

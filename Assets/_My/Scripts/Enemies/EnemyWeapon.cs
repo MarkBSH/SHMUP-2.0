@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWeapon : MonoBehaviour
+[CreateAssetMenu]
+public class EnemyWeapon : ScriptableObject
 {
-    
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    public int projectileCount;
+    public int damage;
+    public bool spreadShot;
+    public int spreadArc;
 }

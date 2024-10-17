@@ -10,24 +10,33 @@ public class BaseEnemy : MonoBehaviour
     [SerializeField] List<GameObject> powerUps = new();
     [SerializeField] GameObject deathParticals;
 
-
-    void Update()
+    public virtual void Update()
     {
         if (HP <= 0)
         {
             //Death
+            Instantiate(deathParticals, transform.position, Quaternion.identity);
+
             if (Random.Range(0, powerUpChance) == 1)
             {
                 Instantiate(powerUps[Random.Range(0, powerUps.Count)], transform.position, Quaternion.identity);
             }
+
+            Destroy(gameObject);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public void LoseHP(int loseHP)
     {
-        if (collision.CompareTag("Player Attack"))
+        HP -= loseHP;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player Attack"))
         {
-            HP -= 1;
+            LoseHP(other.gameObject.GetComponent<AttackMovement>().DMG);
+            Destroy(other.gameObject);
         }
     }
 }

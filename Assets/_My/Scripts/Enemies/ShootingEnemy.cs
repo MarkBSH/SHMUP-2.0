@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class ShootingEnemy : BaseEnemy
 {
-    
+    [SerializeField] float shootCooldown;
+    float shootTimer = 0;
 
-    void Start()
+    EnemyWeapon weapon;
+
+    void Awake()
     {
-        
+        weapon = gameObject.GetComponent<EnemyWeapon>();
     }
 
-    void Update()
+    public override void Update()
     {
-        
+        base.Update();
+        AttackTimer();
+        if (shootTimer >= shootCooldown)
+        {
+            Attack();
+        }
+    }
+
+    void AttackTimer()
+    {
+        if (shootTimer < shootCooldown)
+        {
+            shootTimer += Time.deltaTime;
+        }
+    }
+
+    void Attack()
+    {
+
     }
 }

@@ -5,6 +5,25 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    private static ScoreManager m_Instance;
+    public static ScoreManager Instance
+    {
+        get
+        {
+            if (Instance == null)
+            {
+                m_Instance = FindObjectOfType<ScoreManager>();
+                if (m_Instance == null)
+                {
+                    GameObject _obj = new GameObject();
+                    _obj.name = typeof(ScoreManager).Name;
+                    m_Instance = _obj.AddComponent<ScoreManager>();
+                }
+            }
+            return m_Instance;
+        }
+    }
+
     TextMeshProUGUI scoreText;
     public int scoreCounter = 0;
 
@@ -18,6 +37,7 @@ public class ScoreManager : MonoBehaviour
     {
         scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
         scoreObject = GameObject.Find("ScorePanel");
+        scoreObject.SetActive(false);
     }
 
     void Start()
@@ -33,7 +53,7 @@ public class ScoreManager : MonoBehaviour
 
     public void LoadHighscores()
     {
-        
+        scoreObject.SetActive(true);
         for (int i = 0; i < scoreList.Count + 1; i++)
         {
             if (i <= scoreList.Count)

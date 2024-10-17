@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackMovement : DestroyOverTime
 {
     [SerializeField] bool isPlayer;
     [SerializeField] float bulletVelocity;
+
+    public int DMG;
 
     void Awake()
     {
