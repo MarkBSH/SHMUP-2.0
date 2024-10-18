@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55950bde8ae3fb44ebb72c4304cebde1, type: 3}
+  m_Name: Enemy 2
+  m_EditorClassIdentifier: 
+  projectileCount: 1
+  damage: 1
+  spreadShot: 0
+  spreadArc: 10
+  bulletObj: {fileID: 6379055437997005755, guid: 6f83c07a01fe5a242abeb83d1df9577b, type: 3}

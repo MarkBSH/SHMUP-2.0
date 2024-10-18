@@ -7,7 +7,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] List<Wave> waves = new();
     public int currentWave = 0;
     [SerializeField] float spawnInterval = 10;
-    List<GameObject> spawnedEnemies = new();
+    public List<GameObject> spawnedEnemies = new();
     bool spawningWaves = false;
 
     void Start()

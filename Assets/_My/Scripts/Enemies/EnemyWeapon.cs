@@ -9,4 +9,5 @@ public class EnemyWeapon : ScriptableObject
     public int damage;
     public bool spreadShot;
     public int spreadArc;
+    public GameObject bulletObj;
 }

@@ -5,18 +5,20 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    private static ScoreManager m_Instance;
+        private static ScoreManager m_Instance;
     public static ScoreManager Instance
     {
         get
         {
-            if (Instance == null)
+            if (m_Instance == null)
             {
                 m_Instance = FindObjectOfType<ScoreManager>();
                 if (m_Instance == null)
                 {
-                    GameObject _obj = new GameObject();
-                    _obj.name = typeof(ScoreManager).Name;
+                    GameObject _obj = new()
+                    {
+                        name = typeof(ScoreManager).Name
+                    };
                     m_Instance = _obj.AddComponent<ScoreManager>();
                 }
             }
@@ -56,8 +58,10 @@ public class ScoreManager : MonoBehaviour
         scoreObject.SetActive(true);
         for (int i = 0; i < scoreList.Count + 1; i++)
         {
-            if (i <= scoreList.Count)
+            if (i < scoreList.Count)
             {
+                Debug.Log(i + "i");
+                Debug.Log(scoreList.Count + "scoreList.Count");
                 if (scoreCounter > scoreList[i])
                 {
                     scoreList.Insert(i, scoreCounter);

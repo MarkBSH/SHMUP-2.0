@@ -19,11 +19,11 @@ public class AttackMovement : DestroyOverTime
     {
         if (isPlayer)
         {
-            transform.Translate(0, bulletVelocity * Time.deltaTime, 0);
+            transform.Translate(Vector3.up * bulletVelocity * Time.deltaTime);
         }
         else
         {
-            transform.Translate(0, -bulletVelocity * Time.deltaTime, 0);
+            transform.Translate(Vector3.down * bulletVelocity * Time.deltaTime);
         }
     }
 }
