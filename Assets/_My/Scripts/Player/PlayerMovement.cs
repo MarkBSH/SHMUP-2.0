@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float movementSpeed;
+    public float movementSpeed = 4;
     Vector2 horizontalMovement;
 
     void Update()

@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    TextMeshProUGUI HPText;
     public int HP = 3;
+
+    void Start()
+    {
+        HPText = GameObject.Find("HPText").GetComponent<TextMeshProUGUI>();
+        HPText.text = ": " + HP;
+    }
 
     void DeathCheck()
     {
@@ -13,14 +21,14 @@ public class PlayerHealth : MonoBehaviour
             //death
 
             ScoreManager.Instance.LoadHighscores();
-
-            Debug.Log("death / died");
         }
     }
 
     public void LoseHP(int loseHP)
     {
         HP -= loseHP;
+
+        HPText.text = ": " + HP;
 
         DeathCheck();
     }

@@ -9,7 +9,9 @@ public class PlayerAttacking : MonoBehaviour
     [SerializeField] GameObject attackPoint;
 
     float cooldownTimer = 0;
-    [SerializeField] float cooldownTarget = 0.5f;
+    public float cooldownTarget = 0.5f;
+    public int projectileCount = 1;
+    float shotSpread = 0.4f;
 
     bool isShooting = false;
 
@@ -30,7 +32,12 @@ public class PlayerAttacking : MonoBehaviour
     {
         if (cooldownTimer >= cooldownTarget)
         {
-            Instantiate(bulletObj, attackPoint.transform.position, attackPoint.transform.rotation);
+            for (int i = 0; i < projectileCount; i++)
+            {
+                Vector3 attackLocation = new(attackPoint.transform.position.x - (shotSpread * (projectileCount - 1) / 2) + (shotSpread * i), attackPoint.transform.position.y, attackPoint.transform.position.z);
+                Instantiate(bulletObj, attackLocation, attackPoint.transform.rotation);
+            }
+
             cooldownTimer = 0;
         }
     }

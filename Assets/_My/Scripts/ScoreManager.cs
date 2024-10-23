@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-        private static ScoreManager m_Instance;
+    private static ScoreManager m_Instance;
     public static ScoreManager Instance
     {
         get
@@ -60,8 +60,6 @@ public class ScoreManager : MonoBehaviour
         {
             if (i < scoreList.Count)
             {
-                Debug.Log(i + "i");
-                Debug.Log(scoreList.Count + "scoreList.Count");
                 if (scoreCounter > scoreList[i])
                 {
                     scoreList.Insert(i, scoreCounter);
@@ -73,6 +71,7 @@ public class ScoreManager : MonoBehaviour
             {
                 scoreList.Add(scoreCounter);
                 selectedHighscore = i + 1;
+                break;
             }
         }
 
