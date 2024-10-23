@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d01b45bdd9179949a86452f89a88f48, type: 3}
-  m_Name: Boss Group
+  m_Script: {fileID: 11500000, guid: 55950bde8ae3fb44ebb72c4304cebde1, type: 3}
+  m_Name: Boss
   m_EditorClassIdentifier: 
-  Enemies:
-  - {fileID: 2858478320707291212, guid: fa590c82ab1fe254b86325606dafe7c7, type: 3}
+  projectileBaseCount: 4
+  projectileCount: 3
+  damage: 1
+  spreadShot: 0
+  spreadArc: 20
+  bulletObj: {fileID: 6379055437997005755, guid: 6f83c07a01fe5a242abeb83d1df9577b, type: 3}

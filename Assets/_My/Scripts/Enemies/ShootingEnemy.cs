@@ -32,7 +32,7 @@ public class ShootingEnemy : BaseEnemy
     {
         base.Update();
 
-        weapon.projectileCount = 1 + waveSpawner.currentWave / 2;
+        weapon.projectileCount = weapon.projectileBaseCount + Mathf.Abs(waveSpawner.currentWave / 2);
 
         AttackTimer();
         if (shootTimer >= shootCooldown && canShoot)
@@ -44,7 +44,7 @@ public class ShootingEnemy : BaseEnemy
         {
             Vector3 playerPos = playerObj.transform.position;
             playerPos.z = 0;
-            transform.up = transform.position-playerPos;
+            transform.up = transform.position - playerPos;
         }
     }
 
@@ -64,7 +64,7 @@ public class ShootingEnemy : BaseEnemy
         {
             if (weapon.spreadShot)
             {
-                Instantiate(weapon.bulletObj, transform.position, Quaternion.Euler(0, 0, (weapon.spreadArc / weapon.projectileCount * i) - (weapon.spreadArc / 2) + transform.rotation.z));
+                Instantiate(weapon.bulletObj, transform.position, Quaternion.Euler(0, 0, (weapon.spreadArc / weapon.projectileCount * (i + 1)) - (weapon.spreadArc / 2) + transform.rotation.z));
             }
             else
             {
@@ -73,7 +73,7 @@ public class ShootingEnemy : BaseEnemy
             }
         }
 
-        shootTimer = 0;
+        shootTimer = Random.Range(0f, 0.3f);
         canShoot = true;
     }
 }

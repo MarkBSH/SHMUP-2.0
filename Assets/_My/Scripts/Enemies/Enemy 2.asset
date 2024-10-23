@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55950bde8ae3fb44ebb72c4304cebde1, type: 3}
   m_Name: Enemy 2
   m_EditorClassIdentifier: 
+  projectileBaseCount: 1
   projectileCount: 1
   damage: 1
   spreadShot: 0

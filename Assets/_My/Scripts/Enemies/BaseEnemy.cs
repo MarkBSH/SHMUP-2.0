@@ -9,7 +9,6 @@ public class BaseEnemy : MonoBehaviour
     [SerializeField] int HP = 1;
     [SerializeField] int score = 10;
     [SerializeField] int powerUpChance = 10;
-    [SerializeField] List<GameObject> powerUps = new();
     [SerializeField] GameObject deathParticals;
 
     Vector3 startPos;
@@ -42,7 +41,7 @@ public class BaseEnemy : MonoBehaviour
 
             if (Random.Range(0, powerUpChance) == 1)
             {
-                //Instantiate(powerUps[Random.Range(0, powerUps.Count)], transform.position, Quaternion.identity);
+                Instantiate(SpawnPowerUps.Instance.PickPowerUp(), transform.position, Quaternion.identity);
             }
 
             Destroy(gameObject);

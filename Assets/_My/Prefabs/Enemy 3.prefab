@@ -104,10 +104,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 500152c325490964a953424932a125ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ffbaa2e6ec3a824bb91f9fe1ddb45de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 4034590389436965531}
   - component: {fileID: 2265477311561442358}
   - component: {fileID: 8647104796367488734}
+  - component: {fileID: -1873571520384394732}
   - component: {fileID: 6942354165692975229}
   - component: {fileID: 2492596395558121677}
   m_Layer: 0
@@ -143,15 +144,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8243199609928285930}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 5.79, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7545245934770549680}
   - {fileID: 3902753006817300648}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2265477311561442358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,12 +166,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 5
+  score: 30
   powerUpChance: 10
   powerUps: []
   deathParticals: {fileID: 297570499244491041, guid: 83b51a4caa4c0d04c9ef41baba14dbb2, type: 3}
-  startPosTimer: 0
-  shootCooldown: 0.6
-  weapon: {fileID: 11400000, guid: 53bf29735b8b89446a5d01a01b6f9f71, type: 2}
+  shootCooldown: 1
+  weapon: {fileID: 11400000, guid: 6772fde33083bbc4bbc45af2397ef172, type: 2}
   goToPlayer: 0
 --- !u!114 &8647104796367488734
 MonoBehaviour:
@@ -185,11 +186,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 5
+  score: 0
   powerUpChance: 10
   powerUps: []
   deathParticals: {fileID: 297570499244491041, guid: 83b51a4caa4c0d04c9ef41baba14dbb2, type: 3}
-  startPosTimer: 0
   goToPlayer: 0
+--- !u!114 &-1873571520384394732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8243199609928285930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3a0e1a3e58eea47a89565aa13d7a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTimer: 1e+22
+  isPlayer: 0
+  bulletVelocity: 0
+  DMG: 1
 --- !u!61 &6942354165692975229
 BoxCollider2D:
   m_ObjectHideFlags: 0

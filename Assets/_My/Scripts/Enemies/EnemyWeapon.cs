@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class EnemyWeapon : ScriptableObject
 {
+    public int projectileBaseCount;
     public int projectileCount;
     public int damage;
     public bool spreadShot;

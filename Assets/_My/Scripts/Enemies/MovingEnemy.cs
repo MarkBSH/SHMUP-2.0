@@ -37,11 +37,11 @@ public class MovingEnemy : BaseEnemy
         {
             if (goscreen.x > 0)
             {
-                direction = Vector3.right;
+                direction = Vector3.left;
             }
             else
             {
-                direction = Vector3.left;
+                direction = Vector3.right;
             }
         }
 
@@ -51,8 +51,8 @@ public class MovingEnemy : BaseEnemy
         {
             if (goToPlayer)
             {
-                transform.Translate(Vector3.down * moveSpeed / 4 * Time.deltaTime);
-                transform.Translate(direction * moveSpeed * Time.deltaTime);
+                transform.Translate(Vector3.down * moveSpeed / 4 * Time.deltaTime, Space.World);
+                transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
 
                 float distY = Vector3.Distance(new Vector3(Screen.height / 2, 0f, 0f), new Vector3(goscreen.y, 0f, 0f));
 
@@ -63,7 +63,7 @@ public class MovingEnemy : BaseEnemy
             }
             else
             {
-                transform.Translate(direction * moveSpeed * Time.deltaTime);
+                transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
             }
         }
     }
