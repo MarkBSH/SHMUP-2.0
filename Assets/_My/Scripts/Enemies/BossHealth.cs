@@ -8,7 +8,7 @@ public class BossHealth : MonoBehaviour
     [SerializeField] int HP;
     [SerializeField] int score = 10;
     [SerializeField] List<GameObject> powerUps = new();
-    [SerializeField] GameObject deathParticals;
+    [SerializeField] GameObject deathParticles;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class BossHealth : MonoBehaviour
 
             ScoreManager.Instance.AddScore(score);
 
-            Instantiate(deathParticals, transform.position, Quaternion.identity);
+            Instantiate(deathParticles, transform.position, Quaternion.identity);
 
             Instantiate(SpawnPowerUps.Instance.PickBossPowerUp(), transform.position, Quaternion.identity);
 

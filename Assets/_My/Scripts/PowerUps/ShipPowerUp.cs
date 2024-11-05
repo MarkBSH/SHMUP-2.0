@@ -13,7 +13,7 @@ public class ShipPowerUp : PowerupBase
 
     protected override void PickUp()
     {
-        playerMainScript.shipUpgraded = true;
+        playerMainScript.ShipUpgraded();
 
         base.PickUp();
     }

@@ -9,7 +9,7 @@ public class BaseEnemy : MonoBehaviour
     [SerializeField] int HP = 1;
     [SerializeField] int score = 10;
     [SerializeField] int powerUpChance = 10;
-    [SerializeField] GameObject deathParticals;
+    [SerializeField] GameObject deathParticles;
 
     Vector3 startPos;
     protected float startPosTimer = 0;
@@ -37,7 +37,7 @@ public class BaseEnemy : MonoBehaviour
 
             ScoreManager.Instance.AddScore(score);
 
-            Instantiate(deathParticals, transform.position, Quaternion.identity);
+            Instantiate(deathParticles, transform.position, Quaternion.identity);
 
             if (Random.Range(0, powerUpChance) == 1)
             {

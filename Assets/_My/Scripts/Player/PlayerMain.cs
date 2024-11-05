@@ -8,6 +8,7 @@ public class PlayerMain : MonoBehaviour
     PlayerAttacking playerAttacking;
     public bool shipUpgraded = false;
     PlayerMovement playerMovement;
+    PlayerHealth playerHealth;
 
     [SerializeField] Sprite shipUpgrade1;
     [SerializeField] Sprite shipUpgrade2;
@@ -16,13 +17,14 @@ public class PlayerMain : MonoBehaviour
     {
         playerAttacking = GetComponent<PlayerAttacking>();
         playerMovement = GetComponent<PlayerMovement>();
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     public void WeaponUpgraded()
     {
         weaponUpgraded = true;
 
-        playerAttacking.cooldownTarget = 0.3f;
+        playerAttacking.cooldown = 0.4f;
         playerAttacking.projectileCount = 2;
 
         gameObject.GetComponent<SpriteRenderer>().sprite = shipUpgrade1;
@@ -33,6 +35,9 @@ public class PlayerMain : MonoBehaviour
         shipUpgraded = true;
 
         playerMovement.movementSpeed = 8;
+
+        playerHealth.maxHP++;
+        playerHealth.HP++;
 
         gameObject.GetComponent<SpriteRenderer>().sprite = shipUpgrade2;
     }

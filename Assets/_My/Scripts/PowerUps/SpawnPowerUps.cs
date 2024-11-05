@@ -38,7 +38,7 @@ public class SpawnPowerUps : MonoBehaviour
 
     public GameObject PickPowerUp()
     {
-        if (playerHealthScript.HP < 3)
+        if (playerHealthScript.HP < playerHealthScript.maxHP)
         {
             int randomPowerUp1 = Random.Range(0, 3);
             if (randomPowerUp1 == 0)
@@ -78,7 +78,7 @@ public class SpawnPowerUps : MonoBehaviour
         {
             return powerUps[1];
         }
-        else if (playerHealthScript.HP < 3)
+        else if (playerHealthScript.HP < playerHealthScript.maxHP)
         {
             int randomPowerUp1 = Random.Range(0, 3);
             if (randomPowerUp1 == 0)

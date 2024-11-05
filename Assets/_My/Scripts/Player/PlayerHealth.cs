@@ -6,10 +6,12 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     TextMeshProUGUI HPText;
-    public int HP = 3;
+    public int maxHP = 3;
+    public int HP;
 
     void Start()
     {
+        HP = maxHP;
         HPText = GameObject.Find("HPText").GetComponent<TextMeshProUGUI>();
         HPText.text = ": " + HP;
     }

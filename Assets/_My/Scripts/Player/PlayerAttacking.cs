@@ -9,7 +9,7 @@ public class PlayerAttacking : MonoBehaviour
     [SerializeField] GameObject attackPoint;
 
     float cooldownTimer = 0;
-    public float cooldownTarget = 0.5f;
+    public float cooldown = 0.5f;
     public int projectileCount = 1;
     float shotSpread = 0.4f;
 
@@ -17,7 +17,7 @@ public class PlayerAttacking : MonoBehaviour
 
     void Update()
     {
-        if (cooldownTimer <= cooldownTarget)
+        if (cooldownTimer <= cooldown)
         {
             cooldownTimer += Time.deltaTime;
         }
@@ -30,7 +30,7 @@ public class PlayerAttacking : MonoBehaviour
 
     void Shoot()
     {
-        if (cooldownTimer >= cooldownTarget)
+        if (cooldownTimer >= cooldown)
         {
             for (int i = 0; i < projectileCount; i++)
             {

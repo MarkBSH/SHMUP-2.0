@@ -8,7 +8,7 @@ public class ShieldPowerUp : PowerupBase
 
     protected override void PickUp()
     {
-        // spawn shield powerup
+        Instantiate(shieldObject, transform.position, Quaternion.identity);
 
         base.PickUp();
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
@@ -12,10 +13,6 @@ public class PauseScript : MonoBehaviour
     {
         pauseCanvas = GameObject.Find("PausePanel");
         pauseCanvas.SetActive(false);
-    }
-
-    void Start()
-    {
         isPaused = false;
     }
 
@@ -37,15 +34,29 @@ public class PauseScript : MonoBehaviour
     {
         if (_context.performed)
         {
-            isPaused = true;
+            if (isPaused)
+            {
+                isPaused = false;
+            }
+            else
+            {
+                isPaused = true;
+            }
         }
     }
 
-    public void UnpauseGame(InputAction.CallbackContext _context)
+    public void CloseMenu()
     {
-        if (_context.performed)
-        {
-            isPaused = false;
-        }
+        isPaused = false;
+    }
+
+    public void RetryGame()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    public void QuitGame()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 }

@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 2252211291219536087}
   - component: {fileID: 5455558729797860700}
   - component: {fileID: 1766970619117280445}
+  - component: {fileID: 2041456108943788893}
+  - component: {fileID: 30384355601171187}
   - component: {fileID: 6604371805940557431}
   - component: {fileID: 3850846035383663913}
-  - component: {fileID: 7677070867301557335}
+  - component: {fileID: 3141003007006919707}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -32,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4150139316288535040}
@@ -62,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b979bd6403028e948a4dfbeec158f507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
+  movementSpeed: 4
 --- !u!114 &1766970619117280445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +79,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletObj: {fileID: 6379055437997005755, guid: 1c8874437c016cf439116260067b8c80, type: 3}
   attackPoint: {fileID: 6764518547844626098}
-  cooldownTarget: 0.5
+  cooldown: 0.5
+  projectileCount: 1
+--- !u!114 &2041456108943788893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2817801889247746233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c586e86dbdec4a4496ff2bdde7c5872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 3
+  HP: 3
+--- !u!114 &30384355601171187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2817801889247746233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd7cdb3fb5c7f5c41a5ac2674c652e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponUpgraded: 0
+  shipUpgraded: 0
+  shipUpgrade1: {fileID: 21300000, guid: f343322ed1da26b468ab385195ae1247, type: 3}
+  shipUpgrade2: {fileID: 21300000, guid: 15edcce6a59ff1c428fd0221b218e7a0, type: 3}
 --- !u!212 &6604371805940557431
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -175,8 +208,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1766970619117280445}
         m_TargetAssemblyTypeName: PlayerAttacking, Assembly-CSharp
-        m_MethodName: Shoot
-        m_Mode: 1
+        m_MethodName: StartShooting
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -228,7 +261,19 @@ MonoBehaviour:
     m_ActionId: 351ee562-46e8-4173-a5e0-a96d2fe84ca9
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseScript, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ca354eff-75cc-4319-ab3a-3d5e1d494a18
     m_ActionName: Player/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
@@ -236,8 +281,8 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!68 &7677070867301557335
-EdgeCollider2D:
+--- !u!61 &3141003007006919707
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -268,24 +313,19 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0029001534, y: -0.039154172}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.98, y: 0.75}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8059817, y: 0.67169166}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.4955894, y: -0.18817616}
-  - {x: -0.057854146, y: 0.3800984}
-  - {x: 0.04888179, y: 0.38000023}
-  - {x: 0.49322623, y: -0.19191994}
-  - {x: 0.4914654, y: -0.29733038}
-  - {x: 0.22664979, y: -0.2895685}
-  - {x: 0.14650339, y: -0.3742953}
-  - {x: -0.15290797, y: -0.3755054}
-  - {x: -0.22824863, y: -0.29556686}
-  - {x: -0.48824552, y: -0.29231387}
-  - {x: -0.49186933, y: -0.19376549}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!1 &6764518547844626098
 GameObject:
   m_ObjectHideFlags: 0

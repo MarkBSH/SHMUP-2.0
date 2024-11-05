@@ -118,9 +118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 10
   score: 100
-  powerUpChance: 10
   powerUps: []
-  deathParticals: {fileID: 6060074415972155756, guid: 91d4f2c97118ac248b00a29175a3ac21, type: 3}
+  deathParticles: {fileID: 6060074415972155756, guid: 91d4f2c97118ac248b00a29175a3ac21, type: 3}
 --- !u!212 &5732218234411236616
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -81,7 +81,7 @@ public class ScoreManager : MonoBehaviour
             {
                 scoreTextList[i].fontStyle = (FontStyles)FontStyle.Bold;
             }
-            scoreTextList[i].text = i + ". " + scoreList[i];
+            scoreTextList[i].text = i + 1 + ". " + scoreList[i];
         }
         if (selectedHighscore >= scoreTextList.Count)
         {

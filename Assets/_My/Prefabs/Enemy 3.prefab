@@ -167,9 +167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 5
   score: 30
-  powerUpChance: 10
-  powerUps: []
-  deathParticals: {fileID: 297570499244491041, guid: 83b51a4caa4c0d04c9ef41baba14dbb2, type: 3}
+  powerUpChance: 8
+  deathParticles: {fileID: 297570499244491041, guid: 83b51a4caa4c0d04c9ef41baba14dbb2, type: 3}
   shootCooldown: 1
   weapon: {fileID: 11400000, guid: 6772fde33083bbc4bbc45af2397ef172, type: 2}
   goToPlayer: 0
@@ -187,9 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 5
   score: 0
-  powerUpChance: 10
-  powerUps: []
-  deathParticals: {fileID: 297570499244491041, guid: 83b51a4caa4c0d04c9ef41baba14dbb2, type: 3}
+  powerUpChance: 8
+  deathParticles: {fileID: 0}
   goToPlayer: 0
 --- !u!114 &-1873571520384394732
 MonoBehaviour:

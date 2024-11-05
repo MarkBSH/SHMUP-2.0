@@ -14,6 +14,8 @@ public class HPPowerUp : PowerupBase
     protected override void PickUp()
     {
         playerHealthScript.HP++;
+
+        Debug.Log("jkjihg");
         
         base.PickUp();
     }
