@@ -843,41 +843,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rounds:
   - waves:
-    - enemy1: 3
+    - enemy1: 1
+      enemy2: 1
+      enemy3: 0
+    - enemy1: 1
+      enemy2: 0
+      enemy3: 1
+    - enemy1: 1
+      enemy2: 1
+      enemy3: 1
+  - waves:
+    - enemy1: 1
+      enemy2: 1
+      enemy3: 1
+    - enemy1: 1
       enemy2: 2
       enemy3: 1
-    - enemy1: 4
+    - enemy1: 2
+      enemy2: 1
+      enemy3: 1
+  - waves:
+    - enemy1: 2
       enemy2: 2
       enemy3: 1
     - enemy1: 2
       enemy2: 2
       enemy3: 2
-  - waves:
-    - enemy1: 4
-      enemy2: 3
-      enemy3: 2
-    - enemy1: 4
+    - enemy1: 2
       enemy2: 2
       enemy3: 2
-    - enemy1: 3
-      enemy2: 2
-      enemy3: 3
-  - waves:
-    - enemy1: 4
-      enemy2: 4
-      enemy3: 2
-    - enemy1: 4
-      enemy2: 4
-      enemy3: 2
-    - enemy1: 3
-      enemy2: 4
-      enemy3: 3
   enemy1: {fileID: 2867886604653554131, guid: e4aaad14f1886ec4cb4c6091d4873792, type: 3}
   enemy2: {fileID: 3363732193067615440, guid: 769663ca0eb199541a4ae150a2f544f4, type: 3}
   enemy3: {fileID: 8243199609928285930, guid: e797e0d949a33b64d86b9dbeebc47590, type: 3}
   boss: {fileID: 2858478320707291212, guid: fa590c82ab1fe254b86325606dafe7c7, type: 3}
   currentWave: 0
-  spawnInterval: 10
+  spawnInterval: 4
   spawnedEnemies: []
 --- !u!114 &404301007
 MonoBehaviour:
@@ -1468,11 +1468,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 30384355601171187, guid: 139606b005a5b424cadfb2a0843a8b17, type: 3}
       propertyPath: shipUpgraded
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 30384355601171187, guid: 139606b005a5b424cadfb2a0843a8b17, type: 3}
       propertyPath: weaponUpgraded
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2817801889247746233, guid: 139606b005a5b424cadfb2a0843a8b17, type: 3}
       propertyPath: m_Name

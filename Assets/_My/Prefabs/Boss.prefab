@@ -103,7 +103,7 @@ MonoBehaviour:
   - {fileID: 5173372373731110314}
   - {fileID: 999000832397801306}
   weapon: {fileID: 11400000, guid: 85abb21ee08e11a42a758a3c446e2771, type: 2}
-  shootCooldown: 1
+  shootCooldown: 1.5
 --- !u!114 &3574903540740747103
 MonoBehaviour:
   m_ObjectHideFlags: 0

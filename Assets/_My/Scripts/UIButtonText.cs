@@ -11,7 +11,6 @@ public class UIButtonText : MonoBehaviour
     {
         text.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         text.GetComponent<RectTransform>().rotation = transform.rotation;
-
     }
 
     void StartGame()
@@ -27,16 +26,6 @@ public class UIButtonText : MonoBehaviour
     void QuitGame()
     {
         Application.Quit();
-    }
-
-    void Credits()
-    {
-        //crdits
-    }
-
-    void Controlls()
-    {
-        //controlls
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -56,14 +45,6 @@ public class UIButtonText : MonoBehaviour
             else if (gameObject.name == "StartMenu Button")
             {
                 StartMenu();
-            }
-            else if (gameObject.name == "Credits Button")
-            {
-                Credits();
-            }
-            else if (gameObject.name == "Controlls Button")
-            {
-                Controlls();
             }
         }
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -20,8 +21,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (HP <= 0)
         {
-            //death
-
+            SceneManager.LoadScene("EndScene");
+            
             ScoreManager.Instance.LoadHighscores();
         }
     }
